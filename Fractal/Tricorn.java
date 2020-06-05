@@ -1,11 +1,9 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
+public class Tricorn { public Tricorn() {
+}
 
-public class Mandelbrot {
-    public Mandelbrot() {
-    }
-
-    public static void Mand(BufferedImage image, int x1, int y1) {
+    public static void THre(BufferedImage image, int x1, int y1) {
         int width = x1;
         int height = y1;
         int max = 2000;
@@ -27,7 +25,7 @@ public class Mandelbrot {
                 int iteration;
                 for(iteration = 0; x * x + y * y < 4.0D && iteration < max; ++iteration) {
                     double x_new = x * x - y * y + c_re;
-                    y = 2.0D * x *(y) + c_im;
+                    y = 2.0D * x *(-y) + c_im;
                     x = x_new;
                 }
 
@@ -41,3 +39,5 @@ public class Mandelbrot {
 
     }
 }
+
+

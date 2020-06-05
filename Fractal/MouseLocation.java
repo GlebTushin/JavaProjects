@@ -20,8 +20,21 @@ public class MouseLocation extends JPanel {
                 xPosition = e.getX();
                 yPosition = e.getY();
                 repaint();
+                switch (Worklist.fr){
+                    case 1:{
                 Mandelbrot.Mand(image,width,height);
                 Worklist.scaleFactor++;
+                    break;}
+                    case 2:{Tricorn.THre(image,width,height);
+                    Worklist.scaleFactor++;
+                    break;
+                    }
+                    case 3:{
+                    BurningShip.Burn(image,width,height);
+                        Worklist.scaleFactor++;
+                        break;
+                    }
+                }
                 JPanel pane = new JPanel() {
                 };
             }
@@ -49,8 +62,6 @@ public class MouseLocation extends JPanel {
 //RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
 //RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2.drawImage(image, xPosition*(-1), yPosition*(-1), newW, newH, null);
-        //Main.button.setVisible(true);
-        System.out.println(Worklist.scaleFactor);
+      g2.drawImage(image, xPosition*(-1), yPosition*(-1), newW, newH, null);
     }
 }
